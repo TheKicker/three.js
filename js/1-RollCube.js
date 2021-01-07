@@ -14,7 +14,7 @@ document.body.appendChild( renderer.domElement );
 // Contains all vertices and faces of a cube
 const geometry = new THREE.BoxGeometry();
 // Apply basic material to the cube and color teal
-const material = new THREE.MeshBasicMaterial( { color: 0x008080 } );
+const material = new THREE.MeshBasicMaterial( { color: 0x008080} );
 // Combines the geometry with the material to create an object
 const cube = new THREE.Mesh( geometry, material );
 // Adds said object to our scene
@@ -33,8 +33,9 @@ function animate() {
 
 function rollCube(){
     // Kind of like Roll Tide but way less cool :)
-    cube.rotation.x += 0.02;
-    cube.rotation.y += 0.03;
+    cube.rotation.x += 0.0;
+    cube.rotation.y += 0.005;
+    cube.rotation.z += 0.055;
 }
 
 animate();
