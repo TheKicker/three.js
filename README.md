@@ -15,7 +15,7 @@
 <a href="https://iss-sim.spacex.com/">SpaceX Docking Simulator</a>
 </li>
 <li>
-<a href="https://iss-sim.spacex.com/">Three.js & Typescript Boilerplate Repository by Sean Bradley (@Sean-Bradley) </a>
+<a href="https://github.com/Sean-Bradley/Three.js-TypeScript-Boilerplate">Three.js & Typescript Boilerplate Repository by Sean Bradley (@Sean-Bradley) </a>
 </li>
 </ul>
 
