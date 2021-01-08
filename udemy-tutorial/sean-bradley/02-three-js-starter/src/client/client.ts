@@ -3,7 +3,7 @@ import { OrbitControls } from '/jsm/controls/OrbitControls'
 
 const scene: THREE.Scene = new THREE.Scene()
 
-const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
+const camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.1, 1000)
 
 const renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
@@ -12,7 +12,7 @@ document.body.appendChild(renderer.domElement)
 const controls = new OrbitControls(camera, renderer.domElement)
 
 const geometry: THREE.BoxGeometry = new THREE.BoxGeometry()
-const material: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true })
+const material: THREE.MeshBasicMaterial = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: true })
 
 const cube: THREE.Mesh = new THREE.Mesh(geometry, material)
 scene.add(cube)
@@ -25,11 +25,21 @@ var animate = function () {
 
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
+    cube.rotation.z += 0.01;
 
     controls.update()
 
     renderer.render(scene, camera)
 
 }; 
+
+function onWindowResize(){
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+window.addEventListener('resize', onWindowResize, false);
+
 
 animate(); 
